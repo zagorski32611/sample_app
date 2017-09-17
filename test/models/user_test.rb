@@ -2,36 +2,35 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: "Example User", email: "user@example.com")
+    @user = User.new(name: 'Example User', email: 'user@example.com')
   end
 
-  test "should be valid" do
+  test 'should be valid' do
     assert @user.valid?
   end
 
-  test "name should be present" do
-    @user.name = ""
+  test 'name should be present' do
+    @user.name = ''
     assert_not @user.valid?
   end
 
-  test "email should be present" do
-    @user.email = ""
+  test 'email should be present' do
+    @user.email = ''
     assert_not @user.valid?
   end
 
-  test "email validation" do
+  test 'email validation' do
     invalid_address = %w[user@example,com]
-    invalid_address.each do |invalid_address|
+    invalid_address.each do |invalid_add|
       @user.email = invalid_address
-      assert_not @user.valid?, "#{invalid_address.inspect} should be invalid"
+      assert_not @user.valid?, "#{invalid_add.inspect} should be invalid"
     end
   end
 
-  test "email addedresses should be unique" do
+  test 'email addedresses should be unique' do
     duplicate_user = @user.dup
     duplicate_user.email = @user.email.upcase
     @user.save
     assert_not duplicate_user.valid?
   end
-
 end
