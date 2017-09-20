@@ -1,9 +1,11 @@
-</br>
-The current time is <%= Time.now %>
-</br>
-<%= @user.name %>, <%= @user.email %>, <%= @user.created_at %>,
-<%= @user.updated_at %>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user-info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
