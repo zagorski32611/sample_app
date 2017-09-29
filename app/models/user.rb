@@ -31,4 +31,18 @@ class User < ApplicationRecord
   def authenticated?(remember_token)
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
+
+  # Forget a user
+  def forget
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
+  end
+
+  # logs out current user
+  def log_out
+      foreget(current_user)
+    session.delete(:user_id)
+    @current_user = nil
+  end
 end
