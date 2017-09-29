@@ -20,7 +20,7 @@ class User < ApplicationRecord
   # returns a random token
 
   def User.new_token
-    SecureRandom.urlsafle_base64
+    SecureRandom.urlsafe_base64
   end
 
   def remember
