@@ -1,4 +1,3 @@
-=begin
 require 'test_helper'
 
 class UsersEditTest < ActionDispatch::IntegrationTest
@@ -16,4 +15,3 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_template 'users/edit'
   end
 end
-=end
