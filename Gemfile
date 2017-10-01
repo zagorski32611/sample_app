@@ -34,6 +34,10 @@ gem 'bootstrap-sass'
 
 gem 'faker'
 
+gem 'will_paginate'
+
+gem 'bootstrap-will_paginate'
+
 group :development, :test do
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
