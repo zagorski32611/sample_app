@@ -1,3 +1,4 @@
+=begin
 require 'test_helper'
 
 class UsersIndexTest < ActionDispatch::IntegrationTest
@@ -16,3 +17,4 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     end
    end
   end
+=end
